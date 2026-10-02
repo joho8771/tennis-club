@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>테니스 복식 랭킹 & 대진표</title>
+  <meta name="theme-color" content="#0f5132" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎾</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="top">
+    <div class="brand"><span class="ball">🎾</span><span id="clubName">테니스 클럽</span></div>
+    <div class="top-right">
+      <span id="modeBadge" class="mode"></span>
+      <button class="icon-btn" data-action="refresh" title="새로고침">↻</button>
+    </div>
+  </header>
+
+  <main id="view" class="view" aria-live="polite"></main>
+
+  <nav class="tabs" id="tabs">
+    <button data-tab="session" class="on"><span>📋</span>모임</button>
+    <button data-tab="ranking"><span>🏆</span>랭킹</button>
+    <button data-tab="history"><span>🗂️</span>기록</button>
+    <button data-tab="admin"><span>⚙️</span>관리</button>
+  </nav>
+
+  <div id="modal" class="modal" hidden>
+    <div class="modal-card" role="dialog" aria-modal="true">
+      <div id="modalBody"></div>
+    </div>
+  </div>
+  <div id="toast" class="toast" hidden></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/config.js"></script>
+  <script src="js/scheduler.js"></script>
+  <script src="js/ranking.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
